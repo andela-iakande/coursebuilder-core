@@ -1,0 +1,3 @@
+tests:
+  tests.ext.hello.functional_tests.GlobalHandlerTest: 2
+  tests.ext.hello.functional_tests.NamespacedHandlerTest: 2
