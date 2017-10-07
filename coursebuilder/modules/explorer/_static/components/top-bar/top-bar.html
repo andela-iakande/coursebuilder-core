@@ -109,7 +109,7 @@
         <li><a href="#!">Blog</a></li>
         <li class="divider"></li>
         <template is="dom-if" if="[[currentUser.loggedIn]]">
-          <li><a href="#!student-dashboard">Student Dashboard</a></li>
+          <li><a href="/student-dashboard">Student Dashboard</a></li>
           <template is="dom-if" if="[[currentUser.canViewDashboard]]">
             <li><a href="/modules/admin">Dashboard</a></li>
           </template>
