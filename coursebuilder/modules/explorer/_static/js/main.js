@@ -51,7 +51,7 @@ window.addEventListener('WebComponentsReady', function documentReady() {
   ];
 
   pageLinks.forEach(function (name) {
-    $('body').on('click', 'a[href="#!' + name + '"]', function () {
+    $('body').on('click', 'a[href="' + window.location.origin + '/#!' + name + '"]', function () {
       showPage(name);
     });
 

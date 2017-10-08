@@ -23,22 +23,22 @@
 
                   <template is="dom-if" if="[[currentUser.loggedIn]]">
                     <li>
-                      <a href="#!explorer" class="waves-effect waves-light btn-large" target="_blank">Keep Learning</a>
+                      <a href="/#!explorer" class="waves-effect waves-light btn-large" target="_blank">Keep Learning</a>
                     </li>
                   </template>
 
-                  <li><a href="#!homepage"><i class="material-icons">home</i>Home</a></li>
-                  <li><a href="#!explorer"><i class="material-icons">library_books</i>Courses</a></li>
-                  <li><a href="#!certification"><i class="material-icons">school</i>Certification</a></li>
+                  <li><a href="/#!homepage"><i class="material-icons">home</i>Home</a></li>
+                  <li><a href="/#!explorer"><i class="material-icons">library_books</i>Courses</a></li>
+                  <li><a href="/#!certification"><i class="material-icons">school</i>Certification</a></li>
 
                   <li>
                       <div class="divider"></div>
                   </li>
 
-                  <li><a href="#!tools"><i class="material-icons">work</i>Tools</a></li>
-                  <li><a href="#!events"><i class="material-icons">insert_invitation</i>Events</a></li>
-                  <li><a href="#!faqs"><i class="material-icons">help</i>Help & FAQs</a></li>
-                  <li><a href="#!feedback"><i class="material-icons">chat_bubble</i>Feedback</a></li>
+                  <li><a href="/#!tools"><i class="material-icons">work</i>Tools</a></li>
+                  <li><a href="/#!events"><i class="material-icons">insert_invitation</i>Events</a></li>
+                  <li><a href="/#!faqs"><i class="material-icons">help</i>Help & FAQs</a></li>
+                  <li><a href="/#!feedback"><i class="material-icons">chat_bubble</i>Feedback</a></li>
 
                   <li>
                       <div class="divider"></div>
@@ -66,15 +66,15 @@
       <div class="navbar-fixed">
           <nav class="nav-extended">
             <div class="nav-wrapper pad-5">
-              <a href="#!home" class="brand-logo"><img src="/modules/explorer/_static/images/navbar-logo.png" alt="logo"></a>
+              <a href="/#!home" class="brand-logo"><img src="/modules/explorer/_static/images/navbar-logo.png" alt="logo"></a>
               <div class="nav-wrapper home-main-menu pad-5">
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <div class=" navbar-links">
                   <ul class="left hide-on-med-and-down">
-                      <li><a class="nav-link" href="#!homepage">Home</a></li>
-                      <li><a class="nav-link" href="#!explorer">Courses</a></li>
-                      <li><a class="nav-link" href="#!certification">Certification</a></li>
-                      <li><a class="nav-link" href="#!events">Events</a></li>
+                      <li><a class="nav-link" href="/#!homepage">Home</a></li>
+                      <li><a class="nav-link" href="/#!explorer">Courses</a></li>
+                      <li><a class="nav-link" href="/#!certification">Certification</a></li>
+                      <li><a class="nav-link" href="/#!events">Events</a></li>
                       <!-- Dropdown Trigger -->
                       <li><a class="dropdown-button" href="#!" data-activates="dropdown1">More<i class="material-icons right">arrow_drop_down</i></a></li>
                   </ul>
@@ -90,7 +90,7 @@
                   <template is="dom-if" if="[[currentUser.loggedIn]]">
                     <ul class="right hide-on-med-and-down log-out-nav">
                       <li><a class="log-out-link" href="[[currentUser.logoutUrl]]">LOG OUT</a></li>
-                      <li><a href="#!explorer" class="waves-effect waves-light btn" target="_blank">Keep Learning</a></li>
+                      <li><a href="/#!explorer" class="waves-effect waves-light btn" target="_blank">Keep Learning</a></li>
                     </ul>
                   </template>
               </div>
@@ -102,11 +102,11 @@
       </div>
       <!--  Dropdown(s) -->
       <ul id='dropdown1' class='dropdown-content'>
-        <li><a href="#!tools">Tools</a></li>
+        <li><a href="/#!tools">Tools</a></li>
         <li class="divider"></li>
-        <li><a href="#!faqs">Help & FAQs</a></li>
-        <li><a href="#!feedback">Feedback</a></li>
-        <li><a href="#!">Blog</a></li>
+        <li><a href="/#!faqs">Help & FAQs</a></li>
+        <li><a href="/#!feedback">Feedback</a></li>
+        <li><a href="/#!">Blog</a></li>
         <li class="divider"></li>
         <template is="dom-if" if="[[currentUser.loggedIn]]">
           <li><a href="/student-dashboard">Student Dashboard</a></li>
