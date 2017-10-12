@@ -55,7 +55,7 @@
 }
 
 #course-page {
-  
+   margin-top: 0; 
   .course-content {
     .row, .course-accordion {
       margin: 0;
@@ -268,6 +268,24 @@
     position: relative;
   }
 }
+#courseMobileSidebar {
+  min-width: 400px;
+  padding-top: 30px;
+
+  .course-expand-btn {
+    height: 50px;
+    top: 0;
+    width: 50px;
+    border-radius: 25px;
+  }
+
+ .collapsible-body i {
+    vertical-align: top !important;
+  }
+}
+#courseMobileSidebarBtn {
+  margin-right: 0;
+}
 
 // App specific styles
 .gcb-edit-lesson-button {
@@ -326,12 +344,13 @@ ul#share-dropdown {
     border-radius: 9px;
 }  
 
-@media screen and (max-width: 1000px) {
-  #course-page .course-content .course-accordion {
-    position: relative;
-    display: none;
-    color: #565555;
-    background-color: #FFF;
-    border-bottom: 1px solid #e0e0e0;
+.gcb-lesson-content ul {
+  &:not(.browser-default) {
+    padding-left: 30px;
+    list-style-type: none;
+
+    & > li {
+      list-style-type: disc;
+    }
+  }
 }
-} 

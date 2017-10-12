@@ -74,14 +74,18 @@
 
 
           <div class="course-accordion col l5 xl4 m12">
-
             {% if course_outline %}
-              {% include 'lesson_navbar.html' %}
+              <div class="hide-on-med-and-down">
+                {% include 'lesson_navbar.html' %}
+              </div>
             {% endif %}
 
+            <ul class="side-nav" id="courseMobileSidebar">
+              <li><a id="closeSideNav" href="#!"><i class="material-icons">close</i>Close</a></li>
+            </ul>
           </div>
 
-          <div class="course-card col l7 xl8 m12">
+          <div class="course-card col l7 xl8 m12 s12">
             <div class="card">
 
               {{ html_hooks.insert('unit.after_content_begins') | safe }}
@@ -114,11 +118,11 @@
                course_info.unit.hide_assessment_navigation_buttons) %}
               {% else %}
                 {% if back_button_url %}
-                  <a href="{{ back_button_url }}" class="btn">{{ gettext('Prev') }}</a>
+                  <a href="{{ back_button_url }}" class="btn">{{ gettext('Previous Lesson') }}</a>
                 {% endif %}
 
                 {% if next_button_url %}
-                  <a href="{{ next_button_url }}" class="btn right">{{ gettext('Next') }}</a>
+                  <a href="{{ next_button_url }}" class="btn right">{{ gettext('Next Lesson') }}</a>
                 {% else %}
                   <a href="course" class="btn right"> {{ gettext('End') }} </a>
                 {% endif %}

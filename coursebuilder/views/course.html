@@ -52,34 +52,38 @@
 
 
         <div class="course-accordion col l5 xl4 m12">
+          <div class="hide-on-med-and-down">
+            {% if course_outline %}
+              <h3>
+                Lesson Plan
+              </h3>
+              <div id="hideCourseSidenav">
+                <i class="material-icons">dehaze</i>
+              </div>
 
-          {% if course_outline %}
-            <h3>
-              Lesson Plan
-            </h3>
-            <div id="hideCourseSidenav">
-              <i class="material-icons">dehaze</i>
-            </div>
-
-            <ul class="collapsible" data-collapsible="accordion">
-              {% for outline_element in course_outline recursive %}
-                <div class="collapsible-header {{ element_class }}"><i
-                  class="material-icons">star_border</i>
-                  {{ macros.render_outline_element(
-                         outline_element, can_see_drafts, course_availability,
-                         'span', '', 'span', 'gcb-top-content') }}
-                  {% if show_lessons_in_syllabus and outline_element.contents %}
-                    <ul>
-                      {{ loop(outline_element.contents) }}
-                    </ul>
-                  {% endif %}
-                </div>
+              <ul class="collapsible" data-collapsible="accordion">
+                {% for outline_element in course_outline recursive %}
+                  <div class="collapsible-header {{ element_class }}"><i
+                    class="material-icons">star_border</i>
+                    {{ macros.render_outline_element(
+                           outline_element, can_see_drafts, course_availability,
+                           'span', '', 'span', 'gcb-top-content') }}
+                    {% if show_lessons_in_syllabus and outline_element.contents %}
+                      <ul>
+                        {{ loop(outline_element.contents) }}
+                      </ul>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              </ul>
+              {% for item in extra_content %}
+                {{ item }}
               {% endfor %}
-            </ul>
-            {% for item in extra_content %}
-              {{ item }}
-            {% endfor %}
-          {% endif %}
+            {% endif %}
+          </div>
+          <ul class="side-nav" id="courseMobileSidebar">
+            <li><a id="closeSideNav" href="#!"><i class="material-icons">close</i>Close</a></li>
+          </ul>
 
         </div>
 
