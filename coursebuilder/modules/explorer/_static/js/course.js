@@ -29,9 +29,7 @@ $(document).ready(function documentReady() {
   $('body').on('click', '#closeSideNav', function () {
     $('.button-collapse').sideNav('hide');
   });
-  var carouselContainer = $('.gcb-lesson-content');
-
-
+  
   $('body').on('click', function (event) {
     var courseCarousel = $(event.target).closest('.course-carousel');
     $(document.documentElement).off('keyup');
