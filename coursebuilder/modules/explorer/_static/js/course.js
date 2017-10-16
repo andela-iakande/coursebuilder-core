@@ -20,13 +20,29 @@ $(document).ready(function documentReady() {
     var sidebarWidth = sidebarToggle ? $('.course-accordion').width() : 0;
 
     $('.course-accordion').toggleClass('hide-sidenav');
-    $('.course-card').animate({'margin-left': sidebarWidth / 2 + 'px'}, 300);
-    $('.course-accordion').animate({'margin-left': '-' + sidebarWidth + 'px'}, 300);
+    $('.course-card').animate({ 'margin-left': sidebarWidth / 2 + 'px' }, 300);
+    $('.course-accordion').animate({ 'margin-left': '-' + sidebarWidth + 'px' }, 300);
   });
 
   $('.course-accordion .collapsible').clone().appendTo('#courseMobileSidebar');
   $('.collapsible').collapsible();
   $('body').on('click', '#closeSideNav', function () {
     $('.button-collapse').sideNav('hide');
+  });
+  var carouselContainer = $('.gcb-lesson-content');
+
+
+  $('body').on('click', function (event) {
+    var courseCarousel = $(event.target).closest('.course-carousel');
+    $(document.documentElement).off('keyup');
+    if (courseCarousel.length) {
+      $(document.documentElement).on('keyup', function (event) {
+        if (event.keyCode == 37) {
+          courseCarousel.trigger('prev.owl.carousel');
+        } else if (event.keyCode == 39) {
+          courseCarousel.trigger('next.owl.carousel');
+        }
+      });
+    }
   });
 });
