@@ -29,9 +29,9 @@ $(document).ready(function documentReady() {
   $('body').on('click', '#closeSideNav', function () {
     $('.button-collapse').sideNav('hide');
   });
-  
-  $('body').on('click', function (event) {
-    var courseCarousel = $(event.target).closest('.course-carousel');
+
+  $('.course-content').on('click', function (event) {
+    var courseCarousel = $(event.target).closest('.owl-nav');
     $(document.documentElement).off('keyup');
     if (courseCarousel.length) {
       $(document.documentElement).on('keyup', function (event) {
