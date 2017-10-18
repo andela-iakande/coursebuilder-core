@@ -1,9 +1,9 @@
 $(document).ready(function documentReady() {
   $(".button-collapse").sideNav();
-  $('select').material_select();
-  $('.dropdown-button').dropdown();
+  $("select").material_select();
+  $(".dropdown-button").dropdown();
 
-  $('.course-carousel').owlCarousel({
+  $(".course-carousel").owlCarousel({
     loop: false,
     margin: 10,
     nav: true,
@@ -15,32 +15,54 @@ $(document).ready(function documentReady() {
   });
 
   var sidebarToggle = false;
-  $('body').on('click', '#hideCourseSidenav', function () {
+  $("body").on("click", "#hideCourseSidenav", function() {
     sidebarToggle = !sidebarToggle;
-    var sidebarWidth = sidebarToggle ? $('.course-accordion').width() : 0;
+    var sidebarWidth = sidebarToggle ? $(".course-accordion").width() : 0;
 
-    $('.course-accordion').toggleClass('hide-sidenav');
-    $('.course-card').animate({ 'margin-left': sidebarWidth / 2 + 'px' }, 300);
-    $('.course-accordion').animate({ 'margin-left': '-' + sidebarWidth + 'px' }, 300);
+    $(".course-accordion").toggleClass("hide-sidenav");
+    $(".course-card").animate({ "margin-left": sidebarWidth / 2 + "px" }, 300);
+    $(".course-accordion").animate(
+      { "margin-left": "-" + sidebarWidth + "px" },
+      300
+    );
   });
 
-  $('.course-accordion .collapsible').clone().appendTo('#courseMobileSidebar');
-  $('.collapsible').collapsible();
-  $('body').on('click', '#closeSideNav', function () {
-    $('.button-collapse').sideNav('hide');
+  $(".course-accordion .collapsible").clone().appendTo("#courseMobileSidebar");
+  $(".collapsible").collapsible();
+  $("body").on("click", "#closeSideNav", function() {
+    $(".button-collapse").sideNav("hide");
   });
 
-  $('.course-content').on('click', function (event) {
-    var courseCarousel = $(event.target).closest('.owl-nav');
-    $(document.documentElement).off('keyup');
+  $(".course-content").on("click", function(event) {
+    var courseCarousel = $(event.target).closest(".owl-nav, .owl-dot");
+
+    $(document.documentElement).off("keyup");
     if (courseCarousel.length) {
-      $(document.documentElement).on('keyup', function (event) {
+      $(document.documentElement).on("keyup", function(event) {
         if (event.keyCode == 37) {
-          courseCarousel.trigger('prev.owl.carousel');
+          courseCarousel.trigger("prev.owl.carousel");
         } else if (event.keyCode == 39) {
-          courseCarousel.trigger('next.owl.carousel');
+          courseCarousel.trigger("next.owl.carousel");
         }
       });
     }
   });
 });
+
+//   $('.course-content').on('click', function (event) {
+//     $(this).off('keyup');
+//   });
+
+//   $('.course-carousel').on('click', '.owl-nav, .owl-dots', function (event) {
+//     event.stopPropagation();
+//     const r = $(this).closest('.course-carousel');
+//     $('.course-content').on('keyup', function (event) {
+//       console.log(r)
+//       if (event.keyCode == 37) {
+//         $(r).trigger('prev.owl.carousel');
+//       } else if (event.keyCode == 39) {
+//         $(r).trigger('next.owl.carousel');
+//       }
+//     });
+//   });
+// });
