@@ -35,7 +35,6 @@ $(document).ready(function documentReady() {
 
   $(".course-content").on("click", function(event) {
     var courseCarousel = $(event.target).closest(".owl-nav, .owl-dot");
-
     $(document.documentElement).off("keyup");
     if (courseCarousel.length) {
       $(document.documentElement).on("keyup", function(event) {
@@ -48,21 +47,3 @@ $(document).ready(function documentReady() {
     }
   });
 });
-
-//   $('.course-content').on('click', function (event) {
-//     $(this).off('keyup');
-//   });
-
-//   $('.course-carousel').on('click', '.owl-nav, .owl-dots', function (event) {
-//     event.stopPropagation();
-//     const r = $(this).closest('.course-carousel');
-//     $('.course-content').on('keyup', function (event) {
-//       console.log(r)
-//       if (event.keyCode == 37) {
-//         $(r).trigger('prev.owl.carousel');
-//       } else if (event.keyCode == 39) {
-//         $(r).trigger('next.owl.carousel');
-//       }
-//     });
-//   });
-// });
