@@ -33,17 +33,20 @@ $(document).ready(function documentReady() {
     $(".button-collapse").sideNav("hide");
   });
 
-  $(".course-content").on("click", function(event) {
-    var courseCarousel = $(event.target).closest(".owl-nav, .owl-dot");
+  $(".course-carousel").on("click", function(event) {
     $(document.documentElement).off("keyup");
-    if (courseCarousel.length) {
-      $(document.documentElement).on("keyup", function(event) {
+    var owlCarousel = $(event.target).closest(".owl-carousel");
+    var target = $(event.target);
+    $(document.documentElement).on("keyup", function (event) {
+      if (target.closest(".owl-stage-outer").length) {
+        event.stopPropagation();
+      } else {
         if (event.keyCode == 37) {
-          courseCarousel.trigger("prev.owl.carousel");
+          owlCarousel.trigger("prev.owl.carousel");
         } else if (event.keyCode == 39) {
-          courseCarousel.trigger("next.owl.carousel");
+          owlCarousel.trigger("next.owl.carousel");
         }
-      });
-    }
+      }
+    });
   });
 });
