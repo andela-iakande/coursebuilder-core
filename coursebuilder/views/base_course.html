@@ -33,77 +33,68 @@
 {% endblock %}
 
 {% block navbar %}
-    <!-- nav bar -->
+  <!-- nav bar -->
 
-    <nav class="home-mobile-nav">
-        <div class="nav-wrapper">
-            <ul class="side-nav" id="mobile-demo">
-                <li><a href="/" class="mobile-nav-logo"><img src="/modules/explorer/_static/images/navbar-logo.png"
-                                                             alt="logo"></a></li>
+  <nav class="home-mobile-nav">
+    <div class="nav-wrapper">
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="/" class="mobile-nav-logo">
+          <img src="/modules/explorer/_static/images/navbar-logo.png" alt="logo">
+        </a></li>
 
-                <li>
-                    <div class="divider"></div>
-                </li>
+        <li>
+          <div class="divider"></div>
+        </li>
 
-                {% if loginUrl %}
-                    <li>
-                        <a href="{{ loginUrl }}" class="waves-effect waves-light btn-large">Start Learning</a>
-                    </li>
-                {% endif %}
+        {% if loginUrl %}
+          <li>
+            <a href="{{ loginUrl }}" class="waves-effect waves-light btn-large">Start Learning</a>
+          </li>
+        {% endif %}
 
-                <li><a href="/#!homepage"><i class="material-icons">home</i>Home</a></li>
-                <li><a href="/#!explorer"><i class="material-icons">library_books</i>Courses</a></li>
-                <li><a href="/#!certification"><i class="material-icons">school</i>Certification</a></li>
+        <li><a href="/"><i class="material-icons">home</i>Home</a></li>
+        <li><a href="/#!explorer"><i class="material-icons">library_books</i>Courses</a></li>
+        <li><a href="/#!certification"><i class="material-icons">school</i>Certification</a></li>
 
-                <li>
-                    <div class="divider"></div>
-                </li>
+        <li>
+          <div class="divider"></div>
+        </li>
 
-                <li><a href="/#!tools"><i class="material-icons">work</i>Tools</a></li>
-                <li><a href="/#!events"><i class="material-icons">insert_invitation</i>Events</a></li>
-                <li><a href="/#!faqs"><i class="material-icons">help</i>Help & FAQs</a></li>
-                <li><a href="/#!feedback"><i class="material-icons">chat_bubble</i>Feedback</a></li>
+        <li><a href="/#!tools"><i class="material-icons">work</i>Tools</a></li>
+        <li><a href="/#!events"><i class="material-icons">insert_invitation</i>Events</a></li>
+        <li><a href="/#!faqs"><i class="material-icons">help</i>Help & FAQs</a></li>
+        <li><a href="/#!feedback"><i class="material-icons">chat_bubble</i>Feedback</a></li>
 
-                <li>
-                    <div class="divider"></div>
-                </li>
-                <li><a href="#!"><i class="material-icons">thumb_up</i>Blog</a></li>
-                <li>
-                    <div class="divider"></div>
-                </li>
+        <li>
+          <div class="divider"></div>
+        </li>
+        <li><a href="#!"><i class="material-icons">thumb_up</i>Blog</a></li>
+        <li>
+          <div class="divider"></div>
+        </li>
 
-                {% if loginUrl %}
-                    <li><a href="{{ loginUrl }}" class="waves-effect waves-light btn-large">Sign in</a></li>
-                {% endif %}
+        {% if loginUrl %}
+          <li><a href="{{ loginUrl }}" class="waves-effect waves-light btn-large">Sign in</a></li>
+        {% endif %}
 
-                {% if logoutUrl %}
-                    {% if not transient_student %}
-                        <li>
-                            <a href="student/home"><i class="material-icons">settings</i>{{ gettext('My Progress') }}
-                            </a>
-                        </li>
-                    {% endif %}
+        {% if logoutUrl %}
+          {% if not transient_student %}
+            <li>
+              <a href="student/home"><i
+                class="material-icons">settings</i>{{ gettext('My Progress') }}
+              </a>
+            </li>
+          {% endif %}
 
-                    {% if is_course_admin %}
-                        {% for href, link in auth_links %}
-                            <li><a href="{{ href }}"><i class="material-icons">dashboard</i>{{ link }}</a></li>
-                        {% endfor %}
-                    {% endif %}
-                    <li><a href="{{ logoutUrl }}"><i class="material-icons">exit_to_app</i>Logout</a></li>
-                {% endif %}
+          {% if is_course_admin %}
+            {% for href, link in auth_links %}
+              <li><a href="{{ href }}"><i class="material-icons">dashboard</i>{{ link }}</a></li>
+            {% endfor %}
+          {% endif %}
+          <li><a href="{{ logoutUrl }}"><i class="material-icons">exit_to_app</i>Logout</a></li>
+        {% endif %}
 
-            </ul>
-        </div>
-    </nav>
-
-    <div class="navbar-fixed course-page-nav">
-        <nav class="nav-extended">
-            <div class="nav-wrapper">
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <a href="/" class="brand-logo"><img src="/modules/explorer/_static/images/navbar-logo.png"
-                                                    alt="logo"></a>
-            </div>
-        </nav>
+      </ul>
     </div>
   </nav>
 
