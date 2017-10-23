@@ -11,11 +11,10 @@ $(document).ready(function documentReady() {
       '<i class="material-icons small">chevron_left</i>',
       '<i class="material-icons small">chevron_right</i>'
     ],
-    items: 1
-  });
-
-  $('.course-carousel').on('changed.owl.carousel', function(event) {
-    window.scrollTo(20, 20);
+    items: 1,
+    AutoHeight: {
+      autoHeight: true
+  }
   });
 
   var sidebarToggle = false;

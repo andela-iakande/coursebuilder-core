@@ -3429,7 +3429,7 @@ img { max-width: 100%; vertical-align: bottom; }
 
 .slider .hero-banner { display: block; background: url("../images/hero-banner.jpg"); background-position: center; background-size: cover; }
 
-.slider .hero-banner .hero-banner-content { max-width: 1200px; color: white; position: relative; padding: 150px 15px; }
+.slider .hero-banner .hero-banner-content { max-width: 1200px; color: white; position: relative; padding: 70px 15px; }
 
 .slider .hero-banner .hero-banner-content h1 { font-size: 2rem; font-family: Trebuchet MS; color: white; background: rgba(0, 0, 0, 0.5); padding: 80px; max-width: 500px; margin: 0 0 0 0; min-height: 430px; }
 
@@ -3836,7 +3836,7 @@ h2.style-scope.filter-sidebar { margin-top: 0 !important; }
 
 #course-page .course-content .course-card h2, #course-page .course-content .course-card h3 { font-size: 1.6rem; }
 
-#course-page .course-content .course-card p { font-size: 14px; }
+#course-page .course-content .course-card p { font-size: 1.2rem; }
 
 #course-page .course-content .course-card iframe { width: 100% !important; margin-bottom: 15px; }
 
@@ -3895,14 +3895,6 @@ ul#share-dropdown { min-width: 150px; margin-top: 55px; }
 .page-wrapper { margin-top: 65px; }
 
 [type="checkbox"] + label:before, [type="checkbox"]:not(.filled-in) + label:after { border-radius: 9px; }
-
-.gcb-lesson-content ul:not(.browser-default) { padding-left: 30px; list-style-type: none; }
-
-.gcb-lesson-content ul:not(.browser-default) > li { list-style-type: disc; }
-
-body { font-size: 14px; }
-
-html { font-family: "Roboto"; font-weight: 400; line-height: 1.8571428571; color: #555; }
 
 #faqs { background-color: #F5F5F5; padding-bottom: 30px; min-height: 500px; }
 

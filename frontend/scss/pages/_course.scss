@@ -187,7 +187,7 @@
       }
 
       p {
-        font-size: 14px;
+        font-size: 1.2rem;
       }
 
       iframe {
@@ -343,25 +343,3 @@ ul#share-dropdown {
 [type="checkbox"] + label:before, [type="checkbox"]:not(.filled-in) + label:after {
     border-radius: 9px;
 }  
-
-.gcb-lesson-content ul {
-  &:not(.browser-default) {
-    padding-left: 30px;
-    list-style-type: none;
-
-    & > li {
-      list-style-type: disc;
-    }
-  }
-}
-
-body {
-  font-size: 14px;
-}
- 
-html {
-  font-family: "Roboto";  
-  font-weight: 400;
-  line-height: 1.8571428571;
-  color: #555;
-}
