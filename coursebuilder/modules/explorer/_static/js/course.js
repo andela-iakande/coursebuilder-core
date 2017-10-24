@@ -38,7 +38,9 @@ $(document).ready(function documentReady() {
     var owlCarousel = $(event.target).closest(".owl-carousel");
     var target = $(event.target);
     $(document.documentElement).on("keyup", function (event) {
-      if (target.closest(".owl-stage-outer").length) {
+      var carouselContent = target.closest().context.parentElement.className;
+      if (carouselContent !== ('item') && carouselContent !== 'owl-carousel owl-theme course-carousel owl-loaded owl-drag'
+        && carouselContent !== 'gcb-border-box' && carouselContent !== 'owl-item') {
         event.stopPropagation();
       } else {
         if (event.keyCode == 37) {
