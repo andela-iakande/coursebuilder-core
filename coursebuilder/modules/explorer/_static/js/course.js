@@ -39,8 +39,18 @@ $(document).ready(function documentReady() {
     var target = $(event.target);
     $(document.documentElement).on("keyup", function (event) {
       var carouselContent = target.closest().context.parentElement.className;
-      if (carouselContent !== ('item') && carouselContent !== 'owl-carousel owl-theme course-carousel owl-loaded owl-drag'
-        && carouselContent !== 'gcb-border-box' && carouselContent !== 'owl-item') {
+      if (carouselContent !== ('item')
+        && carouselContent !== 'owl-carousel owl-theme course-carousel owl-loaded owl-drag'
+        && carouselContent !== 'gcb-border-box'
+        && carouselContent !== 'owl-item'
+        && carouselContent !== 'owl-dot active'
+        && carouselContent !== 'owl-next'
+        && carouselContent !== 'owl-prev'
+        && carouselContent !== 'owl-prev disabled'
+        && carouselContent !== 'owl-next disabled'
+        && carouselContent !== 'owl-dot'
+        && carouselContent !== 'owl-dots'
+      ) {
         event.stopPropagation();
       } else {
         if (event.keyCode == 37) {
