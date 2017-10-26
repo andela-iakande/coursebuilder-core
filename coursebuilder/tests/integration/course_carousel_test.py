@@ -1,5 +1,5 @@
-# To test, create a virtualenv and pip install selenium
-# Then run python tests/integration/course_carousel_test.py to test
+"""To test, create a virtualenv and pip install selenium
+Then run python tests/integration/course_carousel_test.py to test"""
 
 import unittest
 from selenium import webdriver
@@ -9,11 +9,11 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 class CarouselNavigationTest(unittest.TestCase):
     def setUp(self):
-        # Assign driver to chrome driver
+        """Assign driver to chrome driver."""
         self.driver = webdriver.Chrome()
 
     def test_no_carousel_movement_in_input_field(self):
-        # Assert no carousel movement when the user clicks inside the carousel
+        """Assert no carousel movement when the user clicks inside the carousel"""
         driver = self.driver
         driver.implicitly_wait(100)
         driver.get("https://cfafrica-mooc-dev.appspot.com/test/unit?unit=4&lesson=12")
@@ -25,11 +25,14 @@ class CarouselNavigationTest(unittest.TestCase):
         driver.implicitly_wait(20)
         element = driver.find_element_by_id("7MD2r4aHrXrY").find_element_by_tag_name("input")
         element.send_keys("The react basics")
-        ActionChains(driver).key_down(Keys.ARROW_LEFT).key_down(Keys.ARROW_LEFT)
+        ActionChains(driver)\
+            .key_down(Keys.ARROW_LEFT)\
+            .key_down(Keys.ARROW_LEFT)\
+            .perform()
         self.assertTrue(driver.find_element_by_id("7MD2r4aHrXrY"))
 
     def test_carousel_movement_outside_input(self):
-        # Assert movement of the carousel when the user clicks outside the carousel content
+        """Assert movement of the carousel when the user clicks outside the carousel content."""
         driver = self.driver
         driver.implicitly_wait(100)
         driver.get("https://cfafrica-mooc-dev.appspot.com/test/unit?unit=4&lesson=12")
@@ -53,7 +56,7 @@ class CarouselNavigationTest(unittest.TestCase):
         self.assertTrue(element)
 
     def test_multiple_carousels(self):
-        # Assert movement of a carousel does not affect the movement of the other carousels present
+        """Assert movement of a carousel does not affect the movement of the other carousels present."""
         driver = self.driver
         driver.implicitly_wait(100)
         driver.get("https://cfafrica-mooc-dev.appspot.com/test/unit?unit=1&lesson=2")
@@ -74,7 +77,7 @@ class CarouselNavigationTest(unittest.TestCase):
         self.assertTrue(second_carousel_content)
 
     def tearDown(self):
-        # terminate driver
+        """terminate driver."""
         self.driver.close()
 
 
