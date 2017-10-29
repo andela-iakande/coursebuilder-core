@@ -33,24 +33,20 @@ $(document).ready(function documentReady() {
     $(".button-collapse").sideNav("hide");
   });
 
+  var parentElementClass = ['item',
+      'owl-carousel owl-theme course-carousel owl-loaded owl-drag',
+      'gcb-border-box', 'owl-item', 'owl-dot active', 'owl-next', 'owl-prev',
+    'owl-prev disabled', 'owl-next disabled', 'owl-dot', 'owl-dots'];
+
   $(".course-carousel").on("click", function(event) {
     $(document.documentElement).off("keyup");
     var owlCarousel = $(event.target).closest(".owl-carousel");
     var target = $(event.target);
     $(document.documentElement).on("keyup", function (event) {
       var carouselContent = target.closest().context.parentElement.className;
-      if (carouselContent !== ('item')
-        && carouselContent !== 'owl-carousel owl-theme course-carousel owl-loaded owl-drag'
-        && carouselContent !== 'gcb-border-box'
-        && carouselContent !== 'owl-item'
-        && carouselContent !== 'owl-dot active'
-        && carouselContent !== 'owl-next'
-        && carouselContent !== 'owl-prev'
-        && carouselContent !== 'owl-prev disabled'
-        && carouselContent !== 'owl-next disabled'
-        && carouselContent !== 'owl-dot'
-        && carouselContent !== 'owl-dots'
-      ) {
+      // returns true if on keyup, the target's first parent is in parent element class array
+      var isParentElement = parentElementClass.includes(carouselContent);
+      if (!isParentElement) {
         event.stopPropagation();
       } else {
         if (event.keyCode == 37) {
