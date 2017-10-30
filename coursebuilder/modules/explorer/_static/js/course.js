@@ -37,7 +37,7 @@ $(document).ready(function documentReady() {
       'owl-carousel owl-theme course-carousel owl-loaded owl-drag',
     'gcb-border-box', 'owl-item', 'owl-dot active',
     'owl-next', 'owl-prev', 'owl-prev disabled',
-    'owl-next disabled','owl-dot', 'owl-dots', 'gcb-lesson-content', 'gcb-lesson-title', 'gcb-html-hook'];
+    'owl-next disabled','owl-dot', 'owl-dots', 'gcb-lesson-content'];
 
   $(".course-carousel").on("click", function(event) {
     $(document.documentElement).off("keyup");
