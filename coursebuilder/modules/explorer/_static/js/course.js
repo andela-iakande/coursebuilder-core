@@ -35,8 +35,9 @@ $(document).ready(function documentReady() {
 
   var parentElementClass = ['item',
       'owl-carousel owl-theme course-carousel owl-loaded owl-drag',
-      'gcb-border-box', 'owl-item', 'owl-dot active', 'owl-next', 'owl-prev',
-    'owl-prev disabled', 'owl-next disabled', 'owl-dot', 'owl-dots'];
+    'gcb-border-box', 'owl-item', 'owl-dot active',
+    'owl-next', 'owl-prev', 'owl-prev disabled',
+    'owl-next disabled','owl-dot', 'owl-dots', 'gcb-lesson-content', 'gcb-lesson-title', 'gcb-html-hook'];
 
   $(".course-carousel").on("click", function(event) {
     $(document.documentElement).off("keyup");
