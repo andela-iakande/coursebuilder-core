@@ -33,21 +33,26 @@ $(document).ready(function documentReady() {
     $(".button-collapse").sideNav("hide");
   });
 
-  var parentElementClass = ['item',
-      'owl-carousel owl-theme course-carousel owl-loaded owl-drag',
-    'gcb-border-box', 'owl-item', 'owl-dot active',
-    'owl-next', 'owl-prev', 'owl-prev disabled',
-    'owl-next disabled','owl-dot', 'owl-dots', 'gcb-lesson-content'];
+  var carouselContentElements = [
+    "input",
+    "li",
+    "span.cm-variable",
+    "img.yui-img",
+    "textarea"
+  ];
 
   $(".course-carousel").on("click", function(event) {
     $(document.documentElement).off("keyup");
     var owlCarousel = $(event.target).closest(".owl-carousel");
     var target = $(event.target);
-    $(document.documentElement).on("keyup", function (event) {
-      var carouselContent = target.closest().context.parentElement.className;
-      // returns true if on keyup, the target's first parent is in parent element class array
-      var isParentElement = parentElementClass.includes(carouselContent);
-      if (!isParentElement) {
+    $(document.documentElement).on("keyup", function(event) {
+      var isElement = false;
+      for (var i = 0; i <= carouselContentElements.length; i++) {
+        if (target.is(carouselContentElements[i])) {
+          isElement = true;
+        }
+      }
+      if (isElement) {
         event.stopPropagation();
       } else {
         if (event.keyCode == 37) {
