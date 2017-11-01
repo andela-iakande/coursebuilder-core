@@ -38,7 +38,10 @@ $(document).ready(function documentReady() {
     "li",
     "span.cm-variable",
     "img.yui-img",
-    "textarea"
+    "textarea",
+    "select",
+    "option",
+    "span"
   ];
 
   $(".course-carousel").on("click", function(event) {
