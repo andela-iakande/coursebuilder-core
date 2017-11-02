@@ -35,7 +35,6 @@ $(document).ready(function documentReady() {
 
   var carouselContentElements = [
     "input",
-    "li",
     "span.cm-variable",
     "img.yui-img",
     "textarea",
