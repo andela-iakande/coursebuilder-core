@@ -96,6 +96,25 @@ class CarouselNavigationTest(unittest.TestCase):
             .perform()
         self.assertTrue(driver.find_element_by_css_selector("div.owl-item"))
 
+    def test_no_carousel_movement_with_radio_buttons(self):
+        driver = self.driver
+        driver.implicitly_wait(20)
+        driver.get("https://cfafrica-mooc-dev.appspot.com/test/unit?unit=4&lesson=11")
+        driver.maximize_window()
+        first_carousel_content = driver.find_element_by_class_name("owl-carousel")
+        ActionChains(driver).click(first_carousel_content).key_down(Keys.ARROW_RIGHT).perform()
+        second_carousel_content = driver.find_element_by_css_selector("input#test1")
+        ActionChains(driver)\
+            .click(second_carousel_content)\
+            .key_down(Keys.ARROW_RIGHT)\
+            .key_down(Keys.ARROW_RIGHT)\
+            .key_down(Keys.ARROW_LEFT)\
+            .perform()
+        self.assertTrue(driver.find_element_by_css_selector("input#test1"))
+        self.assertTrue(driver.find_element_by_css_selector("input#test2"))
+        self.assertTrue(driver.find_element_by_css_selector("input#test3"))
+        self.assertTrue(driver.find_element_by_css_selector("input#test4"))
+
     def tearDown(self):
         """terminate driver."""
         self.driver.close()
